@@ -37,10 +37,6 @@ kubectl port-forward --namespace default $(kubectl get pods --namespace default 
 # Import Grafana's dashboard from contrib/grafana/kube-latency-dashboard.json.
 The username and password for Grafana is admin.
 
-# Scale up the asg
-for i in {6..100..3}; do
-  echo "scaling to $i" && aws autoscaling set-desired-capacity --auto-scaling-group-name kubernetes-nonprod_devcluster-worker --desired-capacity $i && sleep 60
-done
 
 ```
 
